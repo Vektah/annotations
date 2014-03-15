@@ -1,0 +1,37 @@
+{
+    "name": "vektah/bugfree-dangerzone",
+    "type": "type-verifier",
+    "description": "Type verification for php source. Ensures uses and all types within a file verify against the projects auto loader.",
+    "keywords": ["ci", "type", "typehint", "testing"],
+    "homepage": "https://github.com/Vektah/bugfree-dangerzone",
+    "licence": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Adam Scarr",
+            "email": "adam@vektah.net",
+            "role": "Developer"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.5.0",
+		"nikic/php-parser": "*",
+        "vektah/common": "*",
+        "vektah/parser-combinator": "*"
+    },
+
+    "require-dev": {
+        "phake/phake": "v2.0.0-alpha4",
+        "phpunit/phpunit": "3.7.*",
+        "vektah/psr2": "*",
+        "squizlabs/php_codesniffer": "1.*"
+    },
+
+    "bin": [
+        "bin/bugfree"
+    ],
+
+    "autoload": {
+        "psr-0": {"vektah\\annotations\\": "src/main"}
+    }
+}
