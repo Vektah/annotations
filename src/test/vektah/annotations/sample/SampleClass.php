@@ -4,6 +4,9 @@ namespace vektah\annotations\sample;
 
 use vektah\annotations\sample\annotation1\SampleAnnotation1;
 
+/**
+ * @SampleAnnotation("ClassAnnotation")
+ */
 class SampleClass {
 	use SampleTrait;
 

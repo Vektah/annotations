@@ -3,13 +3,11 @@
 namespace vektah\annotations;
 
 class PhpFile {
-	private $filename;
 	private $namespace;
 	private $uses;
 
-	public function __construct($filename) {
-		$this->filename = $filename;
-		$tokens = new TokenStream(token_get_all(file_get_contents($filename)));
+	public function __construct($contents) {
+		$tokens = new TokenStream(token_get_all($contents));
 
 		while (list($id) = $tokens->next()) {
 			if ($id === T_WHITESPACE) continue;
@@ -79,6 +77,27 @@ class PhpFile {
 			}
 		}
 	}
+
+    public function resolve_name($name) {
+        $parts = explode('\\', $name);
+        $matching_part = $parts[0];
+        $remaining = implode('\\', array_slice($parts, 1));
+
+        if (isset($this->uses[$matching_part])) {
+            if ($remaining) {
+                return $this->uses[$matching_part] . '\\' . $remaining;
+            } else {
+                return $this->uses[$matching_part];
+            }
+
+        }
+
+        if ($this->namespace) {
+            return $this->namespace . '\\' . $name;
+        }
+
+        return $name;
+    }
 
 	public function get_namespace() {
 		return $this->namespace;

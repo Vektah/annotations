@@ -32,6 +32,9 @@
     ],
 
     "autoload": {
-        "psr-0": {"vektah\\annotations\\": "src/main"}
+        "psr-0": {
+            "vektah\\annotations\\": "src/main",
+            "vektah\\annotations\\sample": "src/test/"
+        }
     }
 }

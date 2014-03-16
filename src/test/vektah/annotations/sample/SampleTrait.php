@@ -4,7 +4,7 @@ namespace vektah\annotations\sample;
 
 use vektah\annotations\sample\annotation2\SampleAnnotation2;
 
-class SampleTrait {
+trait SampleTrait {
 	/**
 	 * @SampleAnnotation2(2)
 	 */

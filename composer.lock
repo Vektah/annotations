@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ec34741cc74ad7e3851c36cce10c06c3",
+    "hash": "b493f63de398c1561f5011d5882eaba1",
     "packages": [
         {
             "name": "nikic/php-parser",

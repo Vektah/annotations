@@ -2,12 +2,13 @@
 
 namespace vektah\annotations;
 
-/**
- * @FooAnnotation()
- */
+use vektah\annotations\sample\SampleClass;
+
 class AnnotationTest extends \PHPUnit_Framework_TestCase {
 
 	public function test_basic() {
-		Annotation::get_annotated_class(AnnotationTest::class);
+        $class = new AnnotatedClass(SampleClass::class);
+
+        var_dump($class);
 	}
 }
